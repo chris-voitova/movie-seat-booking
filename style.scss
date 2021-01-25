@@ -1,0 +1,98 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+}
+
+.header {
+  background: #15a8e1;
+  padding: 16px;
+  margin: 0 0 32px;
+}
+
+.title {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.movie-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0 16px;
+}
+
+.wrapper {
+  max-width: 768px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.select-block {
+  position: relative;
+  overflow: hidden;
+  margin: 5px 0 0;
+  &:after {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #15a8e1;
+  }
+  &:hover {
+    &:after {
+      border-top: 7px solid white;
+      transition: 0.3s;
+    }
+  }
+}
+.select {
+  appearance: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 3px solid #15a8e1;
+  &:hover {
+    background: #15a8e1;
+    transition: 0.3s;
+    color: white;
+  }
+}
+
+.select-label {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+.screen-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 70px 0 0;
+}
+
+.screen {
+  &__description {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #15a8e1;
+  }
+}
+
+@media (max-width: 767px) {
+}

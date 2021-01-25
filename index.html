@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Movie Seat Booking</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">Choose your movie and seats</h1>
+    </header>
+    <main class="wrapper">
+      <form action="" class="movie-form">
+        <div class="select-wrapper">
+          <label for="movie-select" class="select-label">Select movie</label>
+          <div class="select-block">
+            <select name="movie" id="movie-select" class="select" required>
+              <option class="select__item" value="Синий бархат">
+                Синий бархат
+              </option>
+              <option class="select__item" value="Цвет граната">
+                Цвет граната
+              </option>
+              <option class="select__item" value="Выживут только любовники">
+                Выживут только любовники
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="select-wrapper">
+          <label for="time-select" class="select-label">Select time</label>
+          <div class="select-block">
+            <select name="time" id="time-select" class="select" required>
+              <option class="select__item" value="16:00">16:00</option>
+              <option class="select__item" value="18:30">18:30</option>
+              <option class="select__item" value="21:15">21:15</option>
+            </select>
+          </div>
+        </div>
+      </form>
+      <section class="screen-wrapper">
+        <figure class="screen">
+          <img src="img/screen.svg" alt="screen-image" class="screen__image" />
+          <figcaption class="screen__description">Screen</figcaption>
+        </figure>
+      </section>
+    </main>
+  </body>
+</html>
