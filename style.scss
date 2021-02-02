@@ -4,7 +4,7 @@ body {
   height: 100%;
 }
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .header {
@@ -22,9 +22,29 @@ body {
 }
 
 .movie-form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0 16px;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 16px;
+  }
+  &__submit-block {
+    display: grid;
+    justify-content: end;
+    margin: 16px 0 32px;
+  }
+  &__button-submit {
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 3px solid #15a8e1;
+    background: #ffffff;
+    &:hover {
+      background: #15a8e1;
+      transition: 0.3s;
+      color: white;
+    }
+  }
 }
 
 .wrapper {
@@ -82,7 +102,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 70px 0 0;
+  margin: 32px 0 0;
 }
 
 .screen {
@@ -91,6 +111,43 @@ body {
     text-transform: uppercase;
     font-weight: bold;
     color: #15a8e1;
+  }
+}
+
+.seats-info {
+  justify-content: center;
+  display: flex;
+}
+.seats-info-list {
+  display: flex;
+  &__item {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 16px;
+    &:before {
+      content: "";
+      width: 12px;
+      height: 16px;
+      background: #15a8e1;
+      border-radius: 3px;
+      display: block;
+      margin: 0 8px 0 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &.selected {
+      &:before {
+        background: #ffd600;
+      }
+    }
+    &.disabled {
+      &:before {
+        background: #bdbcc5;
+      }
+    }
   }
 }
 

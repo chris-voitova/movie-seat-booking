@@ -12,40 +12,55 @@
       <h1 class="title">Choose your movie and seats</h1>
     </header>
     <main class="wrapper">
-      <form action="" class="movie-form">
-        <div class="select-wrapper">
-          <label for="movie-select" class="select-label">Select movie</label>
-          <div class="select-block">
-            <select name="movie" id="movie-select" class="select" required>
-              <option class="select__item" value="Синий бархат">
-                Синий бархат
-              </option>
-              <option class="select__item" value="Цвет граната">
-                Цвет граната
-              </option>
-              <option class="select__item" value="Выживут только любовники">
-                Выживут только любовники
-              </option>
-            </select>
+      <form action="#" class="movie-form">
+        <div class="movie-form__wrapper">
+          <div class="select-wrapper">
+            <label for="movie-select" class="select-label">Select movie</label>
+            <div class="select-block">
+              <select name="movie" id="movie-select" class="select" required>
+                <option class="select__item" value="Синий бархат">
+                  Синий бархат
+                </option>
+                <option class="select__item" value="Цвет граната">
+                  Цвет граната
+                </option>
+                <option class="select__item" value="Выживут только любовники">
+                  Выживут только любовники
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="select-wrapper">
+            <label for="time-select" class="select-label">Select time</label>
+            <div class="select-block">
+              <select name="time" id="time-select" class="select" required>
+                <option class="select__item" value="16:00">16:00</option>
+                <option class="select__item" value="18:30">18:30</option>
+                <option class="select__item" value="21:15">21:15</option>
+              </select>
+            </div>
           </div>
         </div>
-        <div class="select-wrapper">
-          <label for="time-select" class="select-label">Select time</label>
-          <div class="select-block">
-            <select name="time" id="time-select" class="select" required>
-              <option class="select__item" value="16:00">16:00</option>
-              <option class="select__item" value="18:30">18:30</option>
-              <option class="select__item" value="21:15">21:15</option>
-            </select>
-          </div>
+        <div class="movie-form__submit-block">
+          <button type="submit" class="movie-form__button-submit">Ok</button>
         </div>
       </form>
+      <section class="seats-info">
+        <ul class="seats-info-list">
+          <li class="seats-info-list__item disabled">N/A</li>
+          <li class="seats-info-list__item">Available</li>
+          <li class="seats-info-list__item selected">Selected</li>
+        </ul>
+      </section>
       <section class="screen-wrapper">
         <figure class="screen">
           <img src="img/screen.svg" alt="screen-image" class="screen__image" />
           <figcaption class="screen__description">Screen</figcaption>
         </figure>
-      </section>
+		</section>
+		<section class="hall">
+			(label>input[type="checkbox"][value="$"])*3
+		</section>
     </main>
   </body>
 </html>

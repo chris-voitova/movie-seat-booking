@@ -5,7 +5,7 @@ body {
 }
 
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .header {
@@ -22,10 +22,31 @@ body {
   color: white;
 }
 
-.movie-form {
+.movie-form__wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0 16px;
+}
+
+.movie-form__submit-block {
+  display: grid;
+  justify-content: end;
+  margin: 16px 0 32px;
+}
+
+.movie-form__button-submit {
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 3px solid #15a8e1;
+  background: #ffffff;
+}
+
+.movie-form__button-submit:hover {
+  background: #15a8e1;
+  transition: 0.3s;
+  color: white;
 }
 
 .wrapper {
@@ -85,7 +106,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 70px 0 0;
+  margin: 32px 0 0;
 }
 
 .screen__description {
@@ -93,4 +114,43 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   color: #15a8e1;
+}
+
+.seats-info {
+  justify-content: center;
+  display: flex;
+}
+
+.seats-info-list {
+  display: flex;
+}
+
+.seats-info-list__item {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.seats-info-list__item:before {
+  content: "";
+  width: 12px;
+  height: 16px;
+  background: #15a8e1;
+  border-radius: 3px;
+  display: block;
+  margin: 0 8px 0 0;
+}
+
+.seats-info-list__item:last-child {
+  margin-right: 0;
+}
+
+.seats-info-list__item.selected:before {
+  background: #ffd600;
+}
+
+.seats-info-list__item.disabled:before {
+  background: #bdbcc5;
 }
