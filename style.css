@@ -28,22 +28,28 @@ body {
   grid-gap: 0 16px;
 }
 
-.movie-form__submit-block {
-  display: grid;
-  justify-content: end;
-  margin: 16px 0 32px;
+.movie-form .submit-block {
+  margin: 16px 0 22px;
 }
 
-.movie-form__button-submit {
+.submit-block {
+  display: grid;
+  justify-content: end;
+  margin: 0 0 32px;
+  justify-content: end;
+}
+
+.button-submit {
   border: none;
   padding: 8px 16px;
   font-weight: bold;
   cursor: pointer;
   border: 3px solid #15a8e1;
   background: #ffffff;
+  border-radius: 3px;
 }
 
-.movie-form__button-submit:hover {
+.button-submit:hover {
   background: #15a8e1;
   transition: 0.3s;
   color: white;
@@ -51,7 +57,7 @@ body {
 
 .wrapper {
   max-width: 768px;
-  padding: 0 16px;
+  padding: 0 16px 60px;
   margin: 0 auto;
 }
 
@@ -88,6 +94,7 @@ body {
   font-weight: bold;
   cursor: pointer;
   border: 3px solid #15a8e1;
+  border-radius: 3px;
 }
 
 .select:hover {
@@ -109,11 +116,19 @@ body {
   margin: 32px 0 0;
 }
 
+.screen {
+  max-width: 100%;
+}
+
 .screen__description {
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
   color: #15a8e1;
+}
+
+.screen__image {
+  width: 100%;
 }
 
 .seats-info {
@@ -135,7 +150,7 @@ body {
 
 .seats-info-list__item:before {
   content: "";
-  width: 12px;
+  width: 13px;
   height: 16px;
   background: #15a8e1;
   border-radius: 3px;
@@ -153,4 +168,89 @@ body {
 
 .seats-info-list__item.disabled:before {
   background: #bdbcc5;
+}
+
+.hall {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  max-width: 400px;
+  margin: 32px auto;
+  grid-gap: 12px;
+}
+
+.hall-item {
+  display: flex;
+  justify-content: center;
+}
+
+.hall-item__input {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.hall-item__input:checked + .hall-item__seat {
+  background: #ffd600;
+}
+
+.hall-item__input:disabled + .hall-item__seat {
+  background: #bdbcc5;
+  outline: none;
+}
+
+.hall-item__input:focus + .hall-item__seat {
+  outline: #005fcc auto 1px;
+}
+
+.hall-item__seat {
+  width: 26px;
+  height: 32px;
+  background: #15a8e1;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.summary-info {
+  border: 3px solid #15a8e1;
+  padding: 16px;
+  border-radius: 3px;
+}
+
+.summary-info__title {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: bold;
+  margin: 0 0 16px;
+}
+
+.summary-list__item {
+  margin: 0 0 8px;
+}
+
+.summary-list__item strong {
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .movie-form__wrapper {
+    grid-template-columns: 1fr;
+    grid-gap: 16px 0;
+  }
+  .hall {
+    grid-gap: 8px;
+    max-width: 328px;
+  }
+  .hall-item__seat {
+    width: 100%;
+  }
+  .submit-block {
+    justify-content: stretch;
+  }
 }
