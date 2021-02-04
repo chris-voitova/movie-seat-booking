@@ -178,6 +178,8 @@ body {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
     &:checked {
       + .hall-item__seat {
         background: #ffd600;
