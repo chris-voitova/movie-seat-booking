@@ -27,16 +27,8 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 0 16px;
   }
-  .submit-block {
-    margin: 16px 0 22px;
-  }
 }
-.submit-block {
-  display: grid;
-  justify-content: end;
-  margin: 0 0 32px;
-  justify-content: end;
-}
+
 .button-submit {
   border: none;
   padding: 8px 16px;
@@ -121,6 +113,7 @@ body {
     text-transform: uppercase;
     font-weight: bold;
     color: #15a8e1;
+    display: block;
   }
   &__image {
     width: 100%;
@@ -130,6 +123,7 @@ body {
 .seats-info {
   justify-content: center;
   display: flex;
+  margin: 32px 0 0;
 }
 .seats-info-list {
   display: flex;
@@ -247,8 +241,5 @@ body {
     &__seat {
       width: 100%;
     }
-  }
-  .submit-block {
-    justify-content: stretch;
   }
 }
