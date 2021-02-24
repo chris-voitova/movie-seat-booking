@@ -164,11 +164,34 @@ body {
   background: #bdbcc5;
 }
 
+.hall-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.rows {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 12px;
+  margin-right: 8px;
+}
+
+.rows__number {
+  width: 26px;
+  height: 32px;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
 .hall {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   max-width: 400px;
-  margin: 32px auto;
   grid-gap: 12px;
 }
 
