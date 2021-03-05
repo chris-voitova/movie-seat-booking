@@ -5,16 +5,19 @@ const TIME_RESULT_CONTAINER = document.querySelector(".time");
 const SEATS_RESULT_CONTAINER = document.querySelector(".seats");
 const HALL_ITEMS = document.querySelectorAll(".hall-item__input");
 const HALL_ITEM = document.querySelectorAll(".hall-item");
+let activeSeatsList = [];
 
-const displaySelectedResult = (selectElement, result) => {
+const displayResultFromSelect = (selectElement, resultField) => {
   selectElement.addEventListener("change", (event) => {
     const selectValue = event.target.value;
     handleMovieExists();
     removeActiveSeats();
+    displayDefaultResult(SEATS_RESULT_CONTAINER);
+    activeSeatsList = [];
     if (!selectValue) {
-      result.innerHTML = `-`;
+      displayDefaultResult(resultField);
     } else {
-      result.innerHTML = `${selectValue}`;
+      resultField.innerHTML = `${selectValue}`;
     }
   });
 };
@@ -25,6 +28,7 @@ const removeActiveSeats = () => {
 const changeSeatsState = (isDisabled) => {
   HALL_ITEMS.forEach((item) => (item.disabled = isDisabled));
 };
+const displayDefaultResult = (resultField) => (resultField.innerHTML = "-");
 
 const handleMovieExists = () => {
   if (MOVIE_SELECT.value && TIME_SELECT.value) {
@@ -36,26 +40,42 @@ const handleMovieExists = () => {
   }
 };
 
-const displaySeatsResult = (result) => {
+const handleSeatsResult = () => {
   const hall = document.querySelector(".hall");
   hall.addEventListener("change", (event) => {
     const target = event.target;
+    const seatValue = target.value;
     if (target.classList.contains("hall-item__input")) {
-      console.log(target);
-      const seatInfo = targetValue;
-      // const seatValue = target.firstElementChild.value.split("-");
-      // const seatNum = seatValue[0];
-      // const rowNum = seatValue[1];
-      // if (result.innerHTML === "-") {
-      //   result.innerHTML = "";
-      // }
-      // result.innerHTML += `<span>seat <strong>${seatNum}</strong> row <strong>${rowNum}</strong>;</span> `;
+      if (!activeSeatsList.includes(seatValue)) {
+        activeSeatsList.push(seatValue);
+        displaySeatsResult(activeSeatsList);
+      } else {
+        activeSeatsList.splice(activeSeatsList.indexOf(seatValue), 1);
+        displaySeatsResult(activeSeatsList);
+      }
     }
   });
 };
 
-displaySeatsResult(SEATS_RESULT_CONTAINER);
+const displaySeatsResult = (resultData) => {
+  let seatsInfoDataHtml = "";
+  resultData.forEach((item) => {
+    const seatValue = item.split("-");
+    const [seatNum, rowNum] = seatValue;
+    const result = `<span>seat <strong>${seatNum}</strong> row <strong>${rowNum}</strong>;</span> `;
+    seatsInfoDataHtml += result;
+  });
 
-// handleMovieExists();
-displaySelectedResult(MOVIE_SELECT, MOVIE_RESULT_CONTAINER);
-displaySelectedResult(TIME_SELECT, TIME_RESULT_CONTAINER);
+  SEATS_RESULT_CONTAINER.innerHTML = "";
+
+  if (seatsInfoDataHtml !== "") {
+    SEATS_RESULT_CONTAINER.innerHTML = seatsInfoDataHtml;
+  } else {
+    displayDefaultResult(SEATS_RESULT_CONTAINER);
+  }
+};
+
+handleSeatsResult(SEATS_RESULT_CONTAINER);
+handleMovieExists();
+displayResultFromSelect(MOVIE_SELECT, MOVIE_RESULT_CONTAINER);
+displayResultFromSelect(TIME_SELECT, TIME_RESULT_CONTAINER);

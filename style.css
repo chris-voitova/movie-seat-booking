@@ -124,6 +124,10 @@ body {
   width: 100%;
 }
 
+.seats span {
+  display: block;
+}
+
 .seats-info {
   justify-content: center;
   display: flex;
@@ -259,12 +263,13 @@ body {
   margin: 0 0 16px;
 }
 
-.summary-list__item {
-  margin: 0 0 8px;
-}
-
 .summary-list__item strong {
   font-weight: bold;
+}
+
+.summary-list__item span {
+  display: block;
+  margin: 8px 0;
 }
 
 .seat {
