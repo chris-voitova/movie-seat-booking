@@ -8,16 +8,19 @@ let activeSeatsList = [];
 
 const removeActiveSeats = () => {
   HALL_ITEMS.forEach((item) => {
-    item.checked = false;
+    const result = item;
+    result.checked = false;
   });
 };
 const changeSeatsState = (isDisabled) => {
   HALL_ITEMS.forEach((item) => {
-    item.disabled = isDisabled;
+    const result = item;
+    result.disabled = isDisabled;
   });
 };
 const displayDefaultResult = (resultField) => {
-  resultField.innerHTML = "-";
+  const result = resultField;
+  result.innerHTML = "-";
 };
 
 const handleMovieExists = () => {
@@ -33,6 +36,7 @@ const handleMovieExists = () => {
 const displayResultFromSelect = (selectElement, resultField) => {
   selectElement.addEventListener("change", (event) => {
     const selectValue = event.target.value;
+    const field = resultField;
     handleMovieExists();
     removeActiveSeats();
     displayDefaultResult(SEATS_RESULT_CONTAINER);
@@ -40,7 +44,7 @@ const displayResultFromSelect = (selectElement, resultField) => {
     if (!selectValue) {
       displayDefaultResult(resultField);
     } else {
-      resultField.innerHTML = `${selectValue}`;
+      field.innerHTML = `${selectValue}`;
     }
   });
 };
