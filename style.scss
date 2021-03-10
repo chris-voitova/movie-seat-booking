@@ -256,7 +256,6 @@ body {
 }
 .summary-list {
   &__item {
-
     strong {
       font-weight: bold;
     }
@@ -280,11 +279,20 @@ body {
   }
   .hall {
     grid-gap: 8px;
-    max-width: 328px;
+    max-width: 310px;
   }
   .hall-item {
+    width: 23px;
+    height: 30px;
     &__seat {
       width: 100%;
+    }
+  }
+  .rows {
+    margin-right: 4px;
+    &__number {
+      width: 20px;
+      height: 30px;
     }
   }
 }
